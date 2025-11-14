@@ -175,7 +175,7 @@ resumeCard.addEventListener('click', function(e) {
     const anchor = e.target.closest('a');
     if (anchor) return; // let anchor handle navigation
     e.preventDefault();
-    window.open('https://drive.google.com/file/d/11LdYcoT4H0R-OJWcsZ847EAuwmPwPPLU/view?usp=sharing', '_blank', 'noopener');
+    window.open('https://drive.google.com/file/d/1KBcf9oHnEwVTQG34SNuLaKICF4KJWC2b/view?usp=sharing', '_blank', 'noopener');
 });
 
 // Make sure anchor clicks inside cards don't bubble to card handlers
