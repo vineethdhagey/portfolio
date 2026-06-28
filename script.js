@@ -68,6 +68,7 @@ document.getElementById('backToTop').addEventListener('click', function() {
 
 // Toggle card content with smooth animation (improved with exact height calc)
 const educationCard = document.getElementById('educationCard');
+const experienceCard = document.getElementById('experienceCard');
 const skillsCard = document.getElementById('skillsCard');
 const projectsCard = document.getElementById('projectsCard');
 const contactCard = document.getElementById('contactCard'); // Now toggleable for consistency
@@ -140,7 +141,7 @@ function closeCard(card) {
 // Apply hover interactions for pointer devices; fall back to click for touch
 if (supportsHover) {
     // Use mouseenter/mouseleave so moving cursor in/out triggers expansion
-    [educationCard, skillsCard, projectsCard, contactCard].forEach(card => {
+    [educationCard, experienceCard, skillsCard, projectsCard, contactCard].forEach(card => {
         if (!card) return;
         card.addEventListener('mouseenter', function (e) {
             openCard(this);
@@ -153,6 +154,10 @@ if (supportsHover) {
 } else {
     // Touch devices: keep click-to-toggle behavior
     educationCard.addEventListener('click', function() {
+        toggleCard(this);
+    });
+
+    experienceCard.addEventListener('click', function() {
         toggleCard(this);
     });
 
