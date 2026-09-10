@@ -1,308 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vineeth Dhagey - AI Engineer | ML Researcher</title>
-    <meta name="description" content="Master's student in Computer Science at BTH specializing in AI, LLMs, and machine learning. Explore projects, skills, and experience.">
-    <meta property="og:title" content="Vineeth Dhagey - AI Engineer | ML Researcher">
-    <meta property="og:description" content="Expertise in AI systems, large language models, and scalable ML pipelines.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/1e0533/ffffff?text=Vineeth+Dhagey">
-    <meta property="og:url" content="https://vineethdhagey.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#06070A">
+
+<title>Vineeth Dhagey — AI Engineer | LLMs, Agentic AI & Machine Learning</title>
+<meta name="description" content="Vineeth Dhagey is an AI engineer working across machine learning, large language models and production software — multi-agent workflows at Volvo Group, terabyte-scale audio pipelines at RISE, and applied ML research.">
+<meta name="author" content="Vineeth Dhagey">
+<link rel="canonical" href="https://vineethdhagey.com">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vineeth Dhagey">
+<meta property="og:title" content="Vineeth Dhagey — AI Engineer">
+<meta property="og:description" content="AI engineer building intelligent systems across machine learning, large language models and production software.">
+<meta property="og:url" content="https://vineethdhagey.com">
+<meta property="og:image" content="https://vineethdhagey.com/profile.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vineeth Dhagey — AI Engineer">
+<meta name="twitter:description" content="AI engineer building intelligent systems across machine learning, large language models and production software.">
+<meta name="twitter:image" content="https://vineethdhagey.com/profile.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306070A'/%3E%3Cpath d='M16 20 L32 46 L48 20' fill='none' stroke='%236E7BFF' stroke-width='6' stroke-linecap='square'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vineeth Dhagey",
+  "jobTitle": "AI Engineer",
+  "email": "mailto:dhageyvineeth@gmail.com",
+  "telephone": "+46769511460",
+  "url": "https://vineethdhagey.com",
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Blekinge Tekniska Högskola" },
+    { "@type": "CollegeOrUniversity", "name": "JNTU Hyderabad" }
+  ],
+  "knowsAbout": ["Machine Learning", "Large Language Models", "Agentic AI", "Retrieval-Augmented Generation", "Data-Centric AI", "Anomaly Detection", "Computer Vision"],
+  "sameAs": [
+    "https://github.com/vineethdhagey",
+    "https://www.linkedin.com/in/vineeth-dhagey-0336b4226/"
+  ]
+}
+</script>
 </head>
+
 <body>
-    <div class="full"></div>
-    <div id="custom-cursor"></div>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">VD</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#educationCard" class="nav-link">Education</a></li>
-                <li><a href="#experienceCard" class="nav-link">Experience</a></li>
-                <li><a href="#skillsCard" class="nav-link">Skills</a></li>
-                <li><a href="#projectsCard" class="nav-link">Projects</a></li>
-                <li><a href="#contactCard" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<canvas class="bg-field" id="signalField" aria-hidden="true"></canvas>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.42c.58.1.79-.25.79-.56v-2.2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05A4.17 4.17 0 0 1 17.6 8.7c4 0 4.74 2.5 4.74 5.76V21h-4v-5.66c0-1.35-.03-3.09-1.94-3.09-1.94 0-2.24 1.47-2.24 2.99V21h-4V9Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3 6.5h18v11H3zM3.4 7l8.6 6.2L20.6 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7.2 3.5H4.4c-.8 0-1.4.7-1.3 1.5C4 13 10.9 19.9 19 20.9c.8.1 1.5-.5 1.5-1.3v-2.8c0-.6-.4-1.2-1-1.3l-3-.7c-.5-.1-1.1.1-1.4.5l-1 1.3a14.5 14.5 0 0 1-6.1-6.1l1.3-1c.4-.3.6-.9.5-1.4l-.7-3c-.1-.6-.7-1-1.3-1Z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5L14 3Zm0 0v4.5h4.5M8.5 13h7M8.5 16.5h4.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+</svg>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><span class="cursor__label"></span></div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#top" aria-label="Vineeth Dhagey — back to top">
+      <span class="nav__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="26" height="26"><path d="M14 20 L32 47 L50 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/></svg>
+      </span>
+      <span class="nav__name">Vineeth Dhagey</span>
+    </a>
+
+    <nav class="nav__menu" id="navMenu" aria-label="Section navigation">
+      <ul>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#experience">Experience</a></li>
+        <li><a class="nav__link" href="#projects">Projects</a></li>
+        <li><a class="nav__link" href="#skills">Skills</a></li>
+        <li><a class="nav__link" href="#education">Education</a></li>
+      </ul>
+      <a class="nav__cta" href="#contact">Contact</a>
     </nav>
 
-    <div class="particles" id="particles"></div>
-    <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="top">
+    <div class="hero__veil" aria-hidden="true"></div>
+
+    <div class="shell hero__shell">
+      <div class="hero__body">
+        <p class="hero__status stagger" data-stagger="1">
+          <span class="pulse" aria-hidden="true"></span>
+          Currently Available for Full-Time Opportunities
+        </p>
+
+        <p class="hero__greeting"><span id="typedGreeting">Hi, I'm</span></p>
+
+        <h1 class="hero__name" id="heroName">
+          <span class="hero__line" data-line="Vineeth"><span class="hero__linetext">Vineeth</span></span>
+          <span class="hero__line hero__line--outline" data-line="Dhagey"><span class="hero__linetext">Dhagey</span></span>
+        </h1>
+
+        <p class="hero__claim stagger" data-stagger="3">
+          AI engineer building intelligent systems across machine&nbsp;learning,
+          large language models and production software.
+        </p>
+
+        <p class="hero__lede stagger" data-stagger="4">
+          Master's graduate in Computer Science from BTH, working on AI systems, LLMs
+          and simulation-driven architectures - from multi-agent workflows at Volvo Group
+          to terabyte-scale audio pipelines at RISE.
+        </p>
+
+        <div class="hero__actions stagger" data-stagger="5">
+          <a class="btn btn--solid magnetic" href="#projects" data-cursor="explore">
+            See my projects
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="cbtn magnetic" href="https://github.com/vineethdhagey" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+          </a>
+          <a class="cbtn magnetic" href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn
+          </a>
+          <a class="cbtn magnetic" href="mailto:dhageyvineeth@gmail.com">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg> Email
+          </a>
+        </div>
+      </div>
+
+      <aside class="plate stagger" data-stagger="4">
+        <div class="plate__frame">
+          <!-- Replace profile.png with your own photo (keep the same filename). -->
+          <img src="profile.png" alt="Vineeth Dhagey" width="500" height="500" loading="eager" decoding="async">
+          <span class="plate__scan" aria-hidden="true"></span>
+          <span class="plate__corner plate__corner--tl" aria-hidden="true"></span>
+          <span class="plate__corner plate__corner--br" aria-hidden="true"></span>
+        </div>
+      </aside>
     </div>
 
-    <div class="container">
-        <section id="home" class="hero">
-            <div class="hero-title-wrapper">
-                <h1>Vineeth Dhagey</h1>
-                <div class="hero-subtitle">Master's in Computer Science · BTH</div>
-            </div>
-            <p>
-                Master's student in Computer Science at BTH with expertise in AI systems, large language models (LLMs), and simulation-driven architectures. Skilled in Python, PyTorch, TensorFlow, Docker, Kubernetes, and cloud-based pipelines for scalable, data-driven research applications. Passionate about applying machine learning and LLMs to real-world problems through collaborative and research-focused solutions.
-            </p>
+    <a class="hero__scroll" href="#impact" aria-label="Scroll to highlights">
+      <span class="hero__scrollrail" aria-hidden="true"><i></i></span>
+      Scroll
+    </a>
+  </section>
+
+  <!-- ══════════════ IMPACT ══════════════ -->
+  <section class="impact" id="impact" aria-label="Selected results">
+    <div class="shell">
+      <ul class="impact__row">
+        <li class="impact__item reveal">
+          <span class="impact__value" data-count="17" data-suffix=" TB">17 TB</span>
+          <span class="impact__label">Raw multi-channel audio transformed into a structured dataset for AI-driven bioacoustic analysis during my thesis at RISE.</span>
+        </li>
+        <li class="impact__item reveal">
+          <span class="impact__value" data-count="123" data-suffix="K">123K</span>
+          <span class="impact__label">High-confidence acoustic events extracted by automated multi-stage filtering</span>
+        </li>
+        <li class="impact__item reveal">
+          <span class="impact__value" data-count="98.68" data-decimals="2" data-suffix="%">98.68%</span>
+          <span class="impact__label">Validation accuracy on the sentiment model behind the youtube videos recommendation ranker</span>
+        </li>
+        <li class="impact__item reveal">
+          <span class="impact__value">Top 10</span>
+          <span class="impact__label">Portathon 2025, Klaipeda - maritime LLM assistant and RAG system</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section class="section" id="about">
+    <div class="shell">
+      <header class="head reveal">
+        <h2 class="head__title">How I work</h2>
+      </header>
+
+      <div class="about">
+        <div class="about__prose reveal">
+          <p class="about__lead">
+            I’m passionate about building intelligent systems that turn complex data into meaningful, real-world solutions.
+          </p>
+          <p>
+            My work sits at the intersection of machine learning, AI and data engineering,
+            with a focus on understanding complex data, building reliable models and turning ideas into
+            working systems.
+          </p>
+          <p>
+           I enjoy exploring new technologies, solving challenging problems and working across the stack -
+           from data and model development to cloud, deployment and production-oriented AI applications.
+          </p>
+        </div>
+
+        <aside class="about__side reveal" aria-label="Research and focus areas">
+  <h3 class="about__sidetitle">Research and focus areas</h3>
+  <ul class="chips">
+    <li>Signal Processing</li><li>Acoustic signal analysis</li><li>Audio embeddings</li>
+    <li>Representation learning</li><li>Unsupervised learning</li><li>Anomaly detection</li>
+    <li>Natural language processing</li><li>Large language models</li><li>Clustering</li>
+    <li>Retrieval-augmented generation</li><li>Agentic AI</li><li>Knowledge graphs</li>
+    <li>Explainable AI</li><li>Data-centric AI</li>
+    <li>Data engineering</li><li>Cloud & deployment</li>
+          <dl class="about__counts">
+            <div><dt>Certifications</dt><dd data-count="5" data-suffix="+">5+</dd></div>
+            <div><dt>Industry &amp; research roles</dt><dd data-count="2">2</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ EXPERIENCE ══════════════ -->
+  <section class="section section--rule" id="experience">
+    <div class="shell">
+      <header class="head reveal">
+        <h2 class="head__title">Experience</h2>
+        <p class="head__note">Industry engineering and applied research.</p>
+      </header>
+
+      <div class="roles">
+        <article class="role reveal">
+          <div class="role__rail">
+            <span class="role__mark"><img src="volvo-logo.png" alt="Volvo Group logo"></span>
+            <span class="role__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jun 2026 — August 2026</span>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">AI Test Automation Engineer <span>(Summer Worker)</span></h3>
+            <p class="role__org">Volvo Group, Gothenburg, Sweden</p>
+            <ul class="role__points">
+              <li>Developed multi-agent AI workflows and knowledge-graph retrieval systems that automate technical requirement analysis and test-case generation.</li>
+              <li>Designed and deployed the <strong>AI workflow</strong> to <strong>production</strong> for software validation in <strong>electromobility</strong> systems, reducing manual effort and increasing test case coverage.</li>
+            </ul>
+            <ul class="tags"><li>Agentic AI</li><li>Knowledge graphs</li><li>Workflow automation</li><li>Requirements Engineering</li></ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role__rail">
+            <span class="role__mark"><img src="rise-logo.png" alt="RISE Research Institutes of Sweden logo"></span>
+            <span class="role__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jan 2026 — Jun 2026</span>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">Master's Thesis Researcher</h3>
+            <p class="role__org">RISE Research Institutes of Sweden, Gothenburg, Sweden</p>
+            <ul class="role__points">
+              <li>Engineered a scalable audio ML pipeline to transform 17 TB of multi-channel guillemot colony recordings into 123K high-confidence acoustic events through automated signal processing and filtering.</li> 
+              <li>Applied deep learning-based audio representations, embedding-based analysis, dimensionality reduction and unsupervised clustering to discover and characterise patterns in complex seabird soundscapes while validating cluster stability across stochasticity, parameter sensitivity and sampling variation.</li>
+            </ul>
+            <ul class="tags"><li>Data-centric AI</li><li>Audio Embeddings</li><li>Unsupervised clustering</li><li>Bioacoustics</li></ul>
+            <figure class="role__photo">
+              <img src="guillemot.jpg" alt="Common guillemot on a colony cliff, the seabird species studied in this thesis" loading="lazy" decoding="async">
+              <figcaption>Common guillemot — the study species</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role__rail">
+            <span class="role__mark role__mark--icon"><i class="fas fa-ship" aria-hidden="true"></i></span>
+            <span class="role__date"><i class="fas fa-calendar" aria-hidden="true"></i> Sep 2025</span>
+          </div>
+          <div class="role__body">
+            <h3 class="role__title">Portathon 2025 — Participant &amp; Developer</h3>
+            <p class="role__org">Klaipeda, Lithuania</p>
+            <ul class="role__points">
+              <li>Built a domain-specific AI assistant by fine-tuning LLaMA 3.1 with QLoRA on maritime AIS datasets.</li>
+              <li>Developed a RAG system integrating real-time maritime data for intelligent information retrieval, finishing in the top 10.</li>
+            </ul>
+            <ul class="tags"><li>LLaMA 3.1</li><li>QLoRA</li><li>RAG</li></ul>
+            <a class="linkout magnetic" data-cursor="repo" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer">
+              View repository
+              <svg aria-hidden="true"><use href="#i-arrow-ne"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PROJECTS ══════════════ -->
+  <section class="section section--rule" id="projects">
+    <div class="shell">
+      <header class="head reveal">
+        <h2 class="head__title">Things I've worked on</h2>
+        <p class="head__note">Engineering projects involving AI, data-driven systems, and practical real-world applications.</p>
+      </header>
+
+      <!-- Featured -->
+      <article class="feature reveal" data-glow>
+        <div class="feature__meta">
+          <h3 class="feature__title">EagleEye - maritime AI assistant</h3>
+          <p class="feature__text">
+            A domain-specific assistant built by fine-tuning LLaMA 3.1 with QLoRA on maritime AIS
+            datasets, paired with a RAG system that integrates real-time maritime data for
+            intelligent information retrieval.
+          </p>
+          <dl class="feature__facts">
+            <div><dt>Problem</dt><dd>General-purpose models can't answer maritime questions grounded in AIS vessel data.</dd></div>
+            <div><dt>Approach</dt><dd>QLoRA fine-tuning on maritime AIS datasets, combined with retrieval over live maritime data.</dd></div>
+            <div><dt>Result</dt><dd>Top 10 finish at Portathon 2025 in Klaipeda, Lithuania.</dd></div>
+          </dl>
+          <ul class="tags">
+            <li>LLaMA 3.1</li><li>QLoRA</li><li>RAG</li><li>Vector search</li>
+          </ul>
+          <a class="linkout magnetic" data-cursor="repo" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer">
+            View repository
+            <svg aria-hidden="true"><use href="#i-arrow-ne"/></svg>
+          </a>
+        </div>
+
+        <div class="feature__visual">
+          <img class="feature__img" src="portathon.png" alt="EagleEye maritime AI assistant — PortInsights chat interface screenshot" loading="lazy" decoding="async">
+        </div>
+      </article>
+
+      <!-- Project cards -->
+      <div class="cards">
+        <article class="card reveal" data-glow>
+          <div class="card__top">
+            <h3 class="card__title"><i class="fas fa-video" aria-hidden="true"></i> End-to-End MLOps Video Recommendation System</h3>
+            <a class="card__repo" data-cursor="repo" href="https://github.com/vineethdhagey/youtube-search-engine" target="_blank" rel="noopener noreferrer" aria-label="End-to-End MLOps Video Recommendation System on GitHub">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+          </div>
+          <p class="card__text">Built a YouTube video recommendation system that ranks youtube videos using sentiment-weighted NLP analysis of 3,000+ comments, combining DistilBERT and VADER in a hybrid ranking pipeline to improve recommendation relevance.</p>
+          <ul class="tags">
+            <li>DistilBERT</li><li>MLOps</li><li>Python</li><li class="tag--metric">98.68% Accuracy</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" data-glow>
+          <div class="card__top">
+            <h3 class="card__title"><i class="fas fa-chart-line" aria-hidden="true"></i> Multi-Horizon Forecasting for Cryptocurrency</h3>
+            <a class="card__repo" data-cursor="repo" href="https://github.com/vineethdhagey/BTC-prediction" target="_blank" rel="noopener noreferrer" aria-label="Multi-Horizon Forecasting for Cryptocurrency on GitHub">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+          </div>
+          <p class="card__text">Built a Reddit sentiment + LSTM time-series forecasting pipeline for cryptocurrency price prediction, with multi-horizon optimization and sensitivity analysis across 1–168 hour prediction windows.</p>
+          <ul class="tags">
+            <li>LSTM</li><li>FinBERT</li><li>PyTorch</li><li class="tag--metric">R² = 0.85</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" data-glow>
+          <div class="card__top">
+            <h3 class="card__title"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> Anomaly Detection &amp; RUL Forecasting for Engines</h3>
+            <a class="card__repo" data-cursor="repo" href="https://github.com/vineethdhagey/anamolydetection.git" target="_blank" rel="noopener noreferrer" aria-label="Anomaly Detection and RUL Forecasting for Engines on GitHub">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+          </div>
+          <p class="card__text">Analyzed high-frequency engine sensor data to detect deviations using Isolation Forest and Autoencoder models, then applied LSTM for degradation forecasting and Remaining Useful Life (RUL) estimation.</p>
+          <ul class="tags">
+            <li>Isolation Forest</li><li>Autoencoders</li><li>LSTM</li><li>Predictive maintenance</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" data-glow>
+          <div class="card__top">
+            <h3 class="card__title"><i class="fas fa-users" aria-hidden="true"></i> Multi-View Pedestrian Detection (YOLOv8)</h3>
+            <a class="card__repo" data-cursor="repo" href="https://github.com/vineethdhagey/pedestriandetection.git" target="_blank" rel="noopener noreferrer" aria-label="Multi-View Pedestrian Detection on GitHub">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+          </div>
+          <p class="card__text">Designed a multi-view pedestrian detection framework using YOLOv8 and PyTorch across six calibrated camera feeds, combining feature-level fusion and cross-view Non-Maximum Suppression.</p>
+          <ul class="tags">
+            <li>YOLOv8</li><li>PyTorch</li><li>NMS</li><li class="tag--metric">&gt;85% Precision</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" data-glow>
+          <div class="card__top">
+            <h3 class="card__title"><i class="fas fa-lightbulb" aria-hidden="true"></i> Comparative Study of SHAP and LIME in Explainable AI</h3>
+            <a class="card__repo" data-cursor="repo" href="https://github.com/vineethdhagey/rm-report" target="_blank" rel="noopener noreferrer" aria-label="Comparative Study of SHAP and LIME on GitHub">
+              <svg aria-hidden="true"><use href="#i-github"/></svg>
+            </a>
+          </div>
+          <p class="card__text">Compared SHAP and LIME for diabetes risk prediction using Random Forest and XGBoost, quantifying Body Mass Index as a high-impact feature and improving model interpretability by 40%.</p>
+          <ul class="tags">
+            <li>SHAP</li><li>LIME</li><li>Random Forest</li><li>XGBoost</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SKILLS ══════════════ -->
+  <section class="section section--rule" id="skills">
+    <div class="shell">
+      <header class="head reveal">
+        <h2 class="head__title">Skills &amp; technologies</h2>
+        <p class="head__note">The technologies and tools I use to explore ideas and build practical solutions.</p>
+      </header>
+
+      <div class="skills">
+        <section class="skillset reveal">
+          <h3><i class="fas fa-brain" aria-hidden="true"></i> AI &amp; Machine Learning</h3>
+          <ul class="pills">
+            <li><i class="fa-solid fa-fire" aria-hidden="true"></i> PyTorch</li>
+<li><i class="fa-solid fa-layer-group" aria-hidden="true"></i> TensorFlow</li>
+<li><i class="fa-solid fa-robot" aria-hidden="true"></i> Transformers</li>
+<li><i class="fa-solid fa-wave-square" aria-hidden="true"></i> LSTM</li>
+<li><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> Explainable AI (SHAP & LIME)</li>
+<li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Scikit-learn</li>
+<li><i class="fa-solid fa-bolt" aria-hidden="true"></i> Apache PySpark</li>
+<li><i class="fa-solid fa-gears" aria-hidden="true"></i> MLOps</li>
+<li><i class="fa-solid fa-comments" aria-hidden="true"></i> NLP</li>
+<li><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> RAG</li>
+<li><i class="fa-solid fa-link" aria-hidden="true"></i> LangChain</li>
+<li><i class="fa-solid fa-route" aria-hidden="true"></i> LangGraph</li>
+<li><i class="fa-solid fa-project-diagram" aria-hidden="true"></i> GraphRAG</li>
+<li><i class="fa-solid fa-vector-square" aria-hidden="true"></i> Embeddings</li>
+<li><i class="fa-solid fa-database" aria-hidden="true"></i> pgvector</li>
+<li><i class="fa-solid fa-robot" aria-hidden="true"></i> Agentic AI</li>
+<li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Knowledge Graphs</li>
+          </ul>
         </section>
 
-        <div class="section-header">
-            <h2>Explore My Work</h2>
-            
-        </div>
+        <section class="skillset reveal">
+          <h3><i class="fas fa-laptop-code" aria-hidden="true"></i> Programming &amp; Development</h3>
+          <ul class="pills">
+            <li><i class="fa-brands fa-python" aria-hidden="true"></i> Python</li>
+            <li><i class="fa-solid fa-code" aria-hidden="true"></i> C</li>
+            <li><i class="fa-solid fa-code" aria-hidden="true"></i> C++</li>  
+            <li><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</li>
+            <li><i class="fa-solid fa-chart-simple" aria-hidden="true"></i> R</li>            
+            <li><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</li>          
+          </ul>
+        </section>
 
-        <div class="cards-grid">
-            <!-- Education Card -->
-            <div class="card" id="educationCard">
-                <div class="card-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3>Education</h3>
-                <div class="card-content">
-                    <h4><i class="fas fa-university"></i> Blekinge Tekniska Högskola</h4>
-                    <p><strong>Master's Qualification Programme in Computer Science</strong></p>
-                    <p>Jan 2025 – Present | Karlskrona, Sweden</p>
-                    <div class="scholarship-badge">
-                        <i class="fas fa-award"></i> Merit-based Scholarship for Academic Excellence
-                    </div>
-                                        
-                    <h4 style="margin-top: 25px;"><i class="fas fa-university"></i> JNTU Hyderabad</h4>
-                    <p><strong>Integrated Dual Degree Programme (B.Tech + M.Tech)</strong></p>
-                    <p>Dec 2021 – Dec 2024 | Hyderabad, India</p>
-                    
-                </div>
-            </div>
+        <section class="skillset reveal">
+          <h3><i class="fas fa-chart-line" aria-hidden="true"></i> Data Analytics &amp; Visualization</h3>
+          <ul class="pills">
+            <li><i class="fa-solid fa-table" aria-hidden="true"></i> Pandas</li>
+            <li><i class="fa-solid fa-calculator" aria-hidden="true"></i> NumPy</li>
+            <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Matplotlib</li>
+            <li><i class="fa-solid fa-chart-area" aria-hidden="true"></i> Seaborn</li>
+            <li><i class="fa-solid fa-database" aria-hidden="true"></i> PostgreSQL</li>
+            <li><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Power BI</li>
+            <li><i class="fa-solid fa-chart-column" aria-hidden="true"></i> Tableau</li>
+            <li><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> EDA</li>
+            <li><i class="fa-solid fa-right-left" aria-hidden="true"></i> ETL Pipelines</li>
+            <li><i class="fa-solid fa-vector-square" aria-hidden="true"></i> Vector Databases</li>
+          </ul>
+        </section>
 
-            <!-- Experience Card -->
-            <div class="card" id="experienceCard">
-                <div class="card-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h3>Experience</h3>
-                <div class="card-content">
-                    <div class="project-item" style="cursor: default;">
-                        <h5 class="project-title"><i class="fas fa-building"></i> Volvo Group &mdash; Gothenburg, Sweden</h5>
-                        <p><strong>AI Intern</strong> &nbsp;·&nbsp; June 2026 – Present</p>
-                        <p>Developing multi-agent AI workflows to automate technical requirement analysis for test case generation.</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Agentic AI</span>
-                            <span class="tech-badge">LLMs</span>
-                            <span class="tech-badge">Workflow Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="project-item" style="cursor: default;">
-                        <h5 class="project-title"><i class="fas fa-flask"></i> RISE Research Institutes of Sweden &mdash; Gothenburg, Sweden</h5>
-                        <p><strong>Master's Thesis Researcher</strong> &nbsp;·&nbsp; Jan 2026 – June 2026</p>
-                        <p>Master's thesis on data-centric AI, focusing on anomaly detection and active learning for large-scale audio and video datasets.</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Data-Centric AI</span>
-                            <span class="tech-badge">Anomaly Detection</span>
-                            <span class="tech-badge">Active Learning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Skills Card -->
-            <div class="card" id="skillsCard">
-                <div class="card-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>Technical Skills</h3>
-                <div class="card-content">
-                    <div class="skill-category">
-                        <strong><i class="fas fa-brain"></i> Machine Learning & AI</strong>
-                        <p>Transformers (HuggingFace), LSTM, SHAP, LIME, Scikit-learn, TensorFlow, PyTorch, Apache PySpark, MLOps, NLP, LLMs, Retrieval Augmented Generation (RAG), LangChain, Prompt Engineering, Agentic AI Frameworks, Knowledge Graphs.</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">PyTorch</span>
-                            <span class="tech-badge">TensorFlow</span>
-                            <span class="tech-badge">HuggingFace</span>
-                            <span class="tech-badge">LangChain</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <strong><i class="fas fa-laptop-code"></i> Programming & Development</strong>
-                        <p>Python, C, C++, Java, JavaScript, R, HTML, CSS, SQL, MATLAB</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">SQL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <strong><i class="fas fa-chart-line"></i> Data Analytics & Visualization</strong>
-                        <p>Pandas, NumPy, Matplotlib, Seaborn, PostgreSQL, Power BI, Tableau, Exploratory Data Analysis, ETL, Vector Databases, Big Data.</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Pandas</span>
-                            <span class="tech-badge">Tableau</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <strong><i class="fas fa-cloud"></i> Cloud & Infrastructure</strong>
-                        <p>Linux, Docker, MCP-Compliant Agent Design, Kubernetes, CI/CD Pipelines, GitHub Actions, REST APIs, Azure DevOps, Cloud-native automation, Containerization, Model deployment</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">Kubernetes</span>
-                            <span class="tech-badge">Azure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projects Card -->
-            <div class="card" id="projectsCard">
-                <div class="card-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>Featured Projects</h3>
-                <div class="card-content">
-                    <a class="project-item" href="https://github.com/vineethdhagey/youtube-search-engine" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-video"></i> End-to-End MLOps Video Recommendation System</h5>
-                                                <div class="tech-badges">
-                            <span class="tech-badge">DistilBERT</span>
-                            <span class="tech-badge">MLOps</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">98.68% validation accuracy</span>
-                            <span class="tech-badge">Hybrid sentiment-ranking algorithm</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>
-
-                    <a class="project-item" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-ship"></i> Portathon-2025 (Klaipeda, Lithuania)</h5>
-                        <p class="project-desc">LLaMA 3.1 fine-tuning using QLoRA | Maritime AIS data | Domain-specific LLM | Real-time Q&A pipelines | Top 10 finish</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">LLaMA 3.1</span>
-                            <span class="tech-badge">QLoRA</span>
-                            <span class="tech-badge">RAG</span>
-                            <span class="tech-badge">Vector search</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>
-
-                    <a class="project-item" href="https://github.com/vineethdhagey/BTC-prediction" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-chart-line"></i> Multi-Horizon Forecasting System for Cryptocurrency</h5>
-
-                        <div class="tech-badges">
-                            <span class="tech-badge">LSTM</span>
-                            <span class="tech-badge">FinBERT</span>
-                            <span class="tech-badge">PyTorch & Reddit sentiment</span>
-                            <span class="tech-badge">R² = 0.85 </span>
-                            <span class="tech-badge">1–168 hour prediction window</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>
-
-                    <a class="project-item" href="https://github.com/vineethdhagey/anamolydetection.git" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-exclamation-triangle"></i> Anomaly Detection & RUL Forecasting for Engines</h5>
-                        
-                        <div class="tech-badges">
-                            <span class="tech-badge">Anomaly detection</span>
-                            <span class="tech-badge">Autoencoders</span>
-                            <span class="tech-badge">LSTM</span>
-                            <span class="tech-badge">RUL forecasting</span>
-                            <span class="tech-badge">Isolation Forest</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>
-                    
-                    <a class="project-item" href="https://github.com/vineethdhagey/pedestriandetection.git" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-users"></i> Multi-View Pedestrian Detection (YOLOv8)</h5>
-                        
-                        <div class="tech-badges">
-                            <span class="tech-badge">YOLOV8</span>
-                            <span class="tech-badge">Object Detection</span>
-                            <span class="tech-badge">PyTorch</span>
-                            <span class="tech-badge">Multi-view-fusion</span>
-                            <span class="tech-badge">NMS</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>                    
-                     
-
-
-
-
-
-
-                    <a class="project-item" href="https://github.com/vineethdhagey/rm-report" target="_blank" rel="noopener noreferrer">
-                        <h5 class="project-title"><i class="fas fa-lightbulb"></i> Comparative Study of SHAP and LIME in Explainable AI</h5>
-                        <p class="project-desc"> | Diabetes risk prediction | Interpretability scores: 0.45 & 0.40 | BMI high-impact factor | 40% ML output improvement</p>
-                        <div class="tech-badges">
-                            <span class="tech-badge">SHAP</span>
-                            <span class="tech-badge">LIME</span>
-                            <span class="tech-badge">Random Forest & XGBoost</span>
-                        </div>
-                        <span class="view-repo"><i class="fab fa-github"></i> View Repository</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Contact Me Card -->
-            <div class="card" id="contactCard">
-                <div class="card-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Get In Touch</h3>
-                <div class="card-content"> <!-- Wrapped for consistency; always visible -->
-                    <div class="static-info">
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:dhageyvineeth@gmail.com">dhageyvineeth@gmail.com</a>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+46 769 511 460</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank">Linkedin</a>
-                        </div>
-                        <div class="info-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/vineethdhagey" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Resume Card -->
-            <div class="card" id="resumeCard">
-                <div class="card-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3>My Resume</h3>
-                <p style="opacity: 0.8; font-size: 0.95rem; margin-top: 12px;">Download complete CV</p>
-                <div class="card-content"> <!-- Wrapped for consistency; minimal content -->
-                    <!-- No additional hidden content; just for structure -->
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 Vineeth Dhagey. Built with passion and code.</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/vineethdhagey" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:dhageyvineeth@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </footer>
+        <section class="skillset reveal">
+          <h3><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Infrastructure</h3>
+          <ul class="pills">
+            <li><i class="fa-brands fa-linux" aria-hidden="true"></i> Linux</li>
+            <li><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</li>
+            <li><i class="fa-solid fa-dharmachakra" aria-hidden="true"></i> Kubernetes</li>
+            <li><i class="fa-solid fa-infinity" aria-hidden="true"></i> CI/CD Pipelines</li>
+            <li><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Actions</li>
+            <li><i class="fa-solid fa-server" aria-hidden="true"></i> REST APIs</li>
+            <li><i class="fa-brands fa-microsoft" aria-hidden="true"></i> Azure DevOps</li>
+            <li><i class="fa-solid fa-box" aria-hidden="true"></i> Containerization</li>
+            <li><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> Model Deployment</li>
+            <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> MCP-Compliant Agents</li>
+          </ul>
+        </section>
+      </div>
     </div>
+  </section>
 
-    <button class="back-to-top" id="backToTop" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- ══════════════ EDUCATION ══════════════ -->
+  <section class="section section--rule" id="education">
+    <div class="shell">
+      <header class="head reveal">
+        <h2 class="head__title">Education</h2>
+      </header>
 
-    <script src="script.js"></script>
+      <ul class="edu">
+        <li class="edu__item reveal">
+          <span class="edu__school"><i class="fas fa-university" aria-hidden="true"></i> Blekinge Tekniska Högskola</span>
+          <span class="edu__degree">Master's Qualification Programme in Computer Science</span>
+          <span class="edu__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jan 2025 — Present &nbsp;·&nbsp; Karlskrona, Sweden</span>
+          <span class="edu__award"><i class="fas fa-award" aria-hidden="true"></i> Merit-based Scholarship for Academic Excellence</span>
+        </li>
+        <li class="edu__item reveal">
+          <span class="edu__school"><i class="fas fa-university" aria-hidden="true"></i> JNTU Hyderabad</span>
+          <span class="edu__degree">Integrated Dual Degree Programme (B.Tech + M.Tech)</span>
+          <span class="edu__date"><i class="fas fa-calendar" aria-hidden="true"></i> Dec 2021 — Dec 2024 &nbsp;·&nbsp; Hyderabad, India</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section class="contact" id="contact">
+    <div class="shell">
+      <div class="contact__grid">
+        <div class="contact__inner reveal">
+          <p class="contact__eyebrow">Contact</p>
+          <h2 class="contact__title">Get in touch</h2>
+          <p class="contact__text">
+            Always open to new opportunities, interesting projects, and meaningful collaborations. Feel free to reach out!
+          </p>
+          <div class="contact__buttons">
+            <a class="cbtn magnetic" href="mailto:dhageyvineeth@gmail.com">
+              <svg aria-hidden="true"><use href="#i-mail"/></svg> Email
+            </a>
+            <span class="cbtn cbtn--static">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg> +46 769 511 460
+            </span>
+            <a class="cbtn magnetic" href="https://github.com/vineethdhagey" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-github"/></svg> GitHub
+            </a>
+            <a class="cbtn magnetic" href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn
+            </a>
+            <a class="cbtn cbtn--wide magnetic" href="https://drive.google.com/file/d/1jeQtpWqrA7kCEa1s1jzEPk8oUPDzGLTy/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#i-doc"/></svg> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <aside class="avail reveal" aria-label="Availability">
+          <p class="avail__line">Open to full-time opportunities.</p>
+          <dl class="avail__spec">
+            <div><dt>Based in</dt><dd>Sweden</dd></div>
+          </dl>
+          <svg class="avail__wave" viewBox="0 0 320 60" aria-hidden="true" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="availWave" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#6E7BFF" stop-opacity="0"/>
+                <stop offset="35%" stop-color="#6E7BFF" stop-opacity=".9"/>
+                <stop offset="100%" stop-color="#A6B0FF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 30 H58 l6-15 7 30 6-22 6 14 5-7h14l6-11 7 22 6-16 6 9 5-5h18l6-13 7 26 6-19 6 11 5-6h16l7 16 6-9 6 5h108" fill="none" stroke="url(#availWave)" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell foot__inner">
+    <ul class="foot__icons">
+      <li><a class="iconlink magnetic" href="https://github.com/vineethdhagey" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
+      <li><a class="iconlink magnetic" href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+      <li><a class="iconlink magnetic" href="mailto:dhageyvineeth@gmail.com" aria-label="Email"><svg aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+    </ul>
+    <p class="foot__legal">© <span id="year">2026</span> Vineeth Dhagey. All rights reserved.</p>
+  </div>
+  <div class="foot__wave" aria-hidden="true"><span></span></div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="Back to top">
+  <svg aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<script src="script.js" defer></script>
 </body>
 </html>
