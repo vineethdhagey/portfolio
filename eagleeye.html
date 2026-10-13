@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head><title>EagleEye — maritime AI assistant · Vineeth Dhagey</title><meta name="description" content="EagleEye: a maritime AI assistant built by fine-tuning LLaMA 3.1 with QLoRA on AIS data, paired with a RAG system over real-time maritime data. Top 10 at Portathon 2025."><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#06070A"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="case.css"></head><body>
+<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
+<a class="skip" href="#main">Skip to content</a><div class="ambient" aria-hidden="true"><i></i></div><div class="progress" aria-hidden="true"></div>
+<header class="bar"><a class="bar__logo" href="index.html"><span class="bar__mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="22" height="22"><path d="M14 20 L32 47 L50 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/></svg></span><span>Vineeth Dhagey</span></a>
+<nav class="bar__nav" aria-label="Page sections"><a href="#overview">Overview</a><a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#results">Outcome</a></nav>
+<a class="btn btn--ghost btn--sm" href="index.html"><span aria-hidden="true">←</span><span>Home</span></a></header>
+<main id="main">
+<section class="hero" id="overview"><div class="wrap">
+<p class="crumb"><a href="index.html">Home</a> / <a href="index.html#projects">Projects</a> / EagleEye</p>
+<div class="hero__grid"><div>
+<span class="chip"><i></i>Portathon 2025 · Klaipeda · Top 10</span>
+<h1><span class="ln" style="--i:0"><span>Ask the sea</span></span><span class="ln" style="--i:1"><span>anything with</span></span><span class="ln" style="--i:2"><span><em>EagleEye.</em></span></span></h1>
+<p class="lead">A domain-specific maritime assistant: LLaMA 3.1 fine-tuned with QLoRA on AIS vessel data, paired with a RAG system that retrieves real-time maritime information to answer port-traffic questions with grounded answers and visuals.</p>
+<div class="cta"><a class="btn btn--solid" data-cursor="repo" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer"><span>View repository</span><span aria-hidden="true">↗</span></a><a class="btn btn--ghost" href="#approach"><span>See how it works</span><span aria-hidden="true">↓</span></a></div>
+</div>
+<div class="vis tilt"><div class="tilt__in"><div class="frame"><div class="frame__top"><i></i><i></i><i></i></div><img src="display.png" alt="PortInsights chat interface of the EagleEye assistant"></div></div><span class="float" style="left:-1rem;bottom:2rem">LLaMA 3.1 + QLoRA</span><span class="float" style="right:-.5rem;top:3rem;animation-delay:-2s">RAG · live data</span></div></div>
+<dl class="meta"><div><dt>Event</dt><dd>Portathon 2025, Klaipeda, Lithuania</dd></div><div><dt>Role</dt><dd>Participant &amp; developer</dd></div><div><dt>Stack</dt><dd>LLaMA 3.1 · QLoRA · RAG · Vector search</dd></div><div><dt>Result</dt><dd>Top 10 finish</dd></div></dl>
+</div></section>
+
+<section><div class="wrap"><div class="stats">
+<div class="stat reveal"><b data-count="10" data-prefix="Top ">Top 10</b><span>Finish at Portathon 2025</span></div>
+<div class="stat reveal"><b>3.1</b><span>LLaMA model fine-tuned for maritime questions</span></div>
+<div class="stat reveal"><b>QLoRA</b><span>Efficient fine-tuning on AIS datasets</span></div>
+<div class="stat reveal"><b>Live</b><span>Real-time maritime data via retrieval</span></div></div></div></section>
+
+<section><div class="marquee" aria-hidden="true"><div><span>LLaMA 3.1</span><span>QLoRA</span><span>RAG</span><span>Vector search</span><span>AIS data</span><span>Port analytics</span><span>LLaMA 3.1</span><span>QLoRA</span><span>RAG</span><span>Vector search</span><span>AIS data</span><span>Port analytics</span></div></div></section>
+
+<section id="problem"><div class="wrap"><p class="label reveal">01 · The problem</p><h2 class="reveal">General models don't know the sea.</h2><p class="sub reveal">General-purpose language models can't answer maritime questions grounded in AIS vessel data, and static training can't reflect what's happening in port right now.</p>
+<div class="grid3"><article class="card reveal"><span class="ico"><i class="fas fa-ship"></i></span><h3>Domain gap</h3><p>Vessel arrivals, congestion and emissions need domain vocabulary and AIS-specific understanding.</p></article>
+<article class="card reveal"><span class="ico"><i class="fas fa-clock"></i></span><h3>Stale knowledge</h3><p>Port traffic changes by the hour, so answers must draw on current data rather than memory alone.</p></article>
+<article class="card reveal"><span class="ico"><i class="fas fa-chart-line"></i></span><h3>Answers need visuals</h3><p>Operators think in trends and comparisons, so the assistant should be able to chart its answers.</p></article></div></div></section>
+
+<section id="approach"><div class="wrap"><p class="label reveal">02 · The approach</p><h2 class="reveal">Two paths, one assistant.</h2><p class="sub reveal">Fine-tuning teaches the model the maritime domain. Retrieval keeps it grounded in live data.</p>
+<div class="flow">
+<article class="card a reveal"><span class="num">Data</span><h3>AIS vessel datasets</h3><p>Maritime AIS data prepared as training material.</p></article>
+<article class="card a reveal"><span class="num">Fine-tune</span><h3>QLoRA on LLaMA 3.1</h3><p>Memory-efficient adaptation to the maritime domain.</p></article>
+<article class="card out reveal"><span class="ico"><i class="fas fa-comments"></i></span><h3>EagleEye assistant</h3><p>A chat interface that answers port-traffic questions and generates charts on request.</p></article>
+<article class="card b reveal"><span class="num">Data</span><h3>Real-time maritime data</h3><p>Current port and vessel information streams.</p></article>
+<article class="card b reveal"><span class="num">Retrieve</span><h3>RAG + vector search</h3><p>Relevant context retrieved per question for grounded answers.</p></article></div></div></section>
+
+<section><div class="wrap"><p class="label reveal">Capabilities</p><h2 class="reveal">What it does.</h2>
+<div class="grid3"><article class="card reveal"><span class="ico"><i class="fas fa-bullseye"></i></span><h3>Grounded answers</h3><p>Responses rooted in AIS vessel data rather than generic knowledge.</p></article>
+<article class="card reveal"><span class="ico"><i class="fas fa-chart-column"></i></span><h3>Charts on demand</h3><p>Ask for arrivals, congestion or emissions and get a visual back.</p></article>
+<article class="card reveal"><span class="ico"><i class="fas fa-bolt"></i></span><h3>Live context</h3><p>Retrieval over real-time data keeps answers current.</p></article></div></div></section>
+
+<section id="results"><div class="wrap"><p class="label reveal">03 · Outcome</p><h2 class="reveal">Result and what's next.</h2>
+<div class="grid2"><article class="card reveal"><span class="num">Result</span><h3>Top 10 at Portathon 2025</h3><p>Built and presented in Klaipeda, Lithuania, combining a fine-tuned domain model with live retrieval in a working demo.</p><p style="margin-top:1rem"><a class="btn btn--solid btn--sm" data-cursor="repo" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer"><span>View repository</span><span aria-hidden="true">↗</span></a></p></article>
+<article class="card reveal"><span class="num">Scope</span><h3>Hackathon prototype</h3><p>EagleEye was built during a competition as a proof of concept, not a production-certified maritime system.</p></article></div></div></section>
+
+</main>
+<footer><div class="wrap"><span>© 2026 Vineeth Dhagey</span><span><a href="index.html">Home</a> · <a href="mailto:dhageyvineeth@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="https://github.com/vineethdhagey" target="_blank" rel="noopener noreferrer">GitHub</a></span></div></footer><button class="totop" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><i aria-hidden="true"></i></button>
+
+<script src="case.js" defer></script></body></html>

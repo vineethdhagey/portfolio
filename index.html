@@ -132,7 +132,7 @@
 
         <div class="hero__actions stagger" data-stagger="5">
           <a class="btn btn--solid magnetic" href="#projects" data-cursor="explore">
-            See my projects
+            Explore my work
             <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
           <a class="cbtn magnetic" href="https://github.com/vineethdhagey" target="_blank" rel="noopener noreferrer">
@@ -237,42 +237,70 @@
         <p class="head__note">Industry engineering and applied research.</p>
       </header>
 
+      
+       <article class="feature thesis-teaser reveal" data-glow>
+          <div class="feature__meta">
+            <p class="thesis-eyebrow">Master's thesis · RISE · BTH</p>
+            <h3 class="feature__title">Data Centric AI for Acoustic discovery in Bioacoustics.</h3>
+            <p class="feature__text">My thesis turns terabytes of raw colony audio into a structured, searchable dataset, then uses audio embeddings and unsupervised clustering to uncover patterns in guillemot vocalisations.</p>
+            <ul class="tags"><li>Bioacoustics</li><li>Audio embeddings</li><li>Unsupervised clustering</li></ul>
+            <a class="btn btn--solid magnetic" href="thesis.html" data-cursor="explore"><span>Explore the research</span><span aria-hidden="true">→</span></a>
+          </div>
+          <div class="feature__visual">
+            <img class="feature__img" src="guillemot.jpg" alt="Common guillemot on a colony cliff" loading="lazy" decoding="async">
+          </div>
+        </article>
+      
+      
+      
+      
+      
+      
+      
       <div class="roles">
-        <article class="role reveal">
-          <div class="role__rail">
-            <span class="role__mark"><img src="volvo-logo.png" alt="Volvo Group logo"></span>
-            <span class="role__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jun 2026 — August 2026</span>
+        <article class="vx reveal" id="volvoRole">
+          <div class="vx__glow" aria-hidden="true"></div>
+          <header class="vx__head">
+            <span class="vx__mark"><img src="volvo-logo.png" alt="Volvo Group logo"></span>
+            <div class="vx__meta">
+              <p class="vx__eyebrow"><span class="vx__live"></span> Volvo Group · Electromobility</p>
+              <h3 class="vx__title">Requirements in. <em>Test cases out.</em></h3>
+              <p class="vx__role">AI Test Automation Engineer <span>(Summer Worker)</span> · Gothenburg, Sweden</p>
+            </div>
+            <span class="role__date vx__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jun 2026 — August 2026</span>
+          </header>
+
+          <div class="vx__stage">
+            <div class="vx__steps" role="tablist" aria-label="Workflow stages">
+              <button class="vx__step is-on" role="tab" aria-selected="true" data-step="0"><b>01</b><span>Requirements</span></button>
+              <button class="vx__step" role="tab" aria-selected="false" data-step="1"><b>02</b><span>Knowledge graph</span></button>
+              <button class="vx__step" role="tab" aria-selected="false" data-step="2"><b>03</b><span>Multi-agent workflow</span></button>
+              <button class="vx__step" role="tab" aria-selected="false" data-step="3"><b>04</b><span>Test cases</span></button>
+              <p class="vx__desc" id="vxDesc" aria-live="polite"></p>
+            </div>
+            <div class="vx__viz">
+              <svg id="vxGraph" viewBox="0 0 420 310" role="img" aria-label="Animated diagram: requirements flow through a knowledge graph and agents into test cases"></svg>
+              <p class="vx__hint">Tap a stage to trace the flow</p>
+            </div>
           </div>
-          <div class="role__body">
-            <h3 class="role__title">AI Test Automation Engineer <span>(Summer Worker)</span></h3>
-            <p class="role__org">Volvo Group, Gothenburg, Sweden</p>
-            <ul class="role__points">
-              <li>Developed multi-agent AI workflows and knowledge-graph retrieval systems that automate technical requirement analysis and test-case generation.</li>
-              <li>Designed and deployed the <strong>AI workflow</strong> to <strong>production</strong> for software validation in <strong>electromobility</strong> systems, reducing manual effort and increasing test case coverage.</li>
-            </ul>
-            <ul class="tags"><li>Agentic AI</li><li>Knowledge graphs</li><li>Workflow automation</li><li>Requirements Engineering</li></ul>
-          </div>
+
+          <dl class="vx__facts">
+            
+            <div><dt>Architecture</dt><dd>Multi-agent + knowledge graph</dd></div>
+            <div><dt>Manual effort</dt><dd class="vx__down">Reduced</dd></div>
+            <div><dt>Test coverage</dt><dd class="vx__up">Increased</dd></div>
+          </dl>
+
+          <ul class="role__points">
+            <li>Developed multi-agent AI workflows and knowledge-graph retrieval systems that automate technical requirement analysis and test-case generation.</li>
+            <li>Designed and deployed the <strong>AI workflow</strong> to <strong>production</strong> for software validation in <strong>electromobility</strong> systems, reducing manual effort and increasing test case coverage.</li>
+          </ul>
+          <ul class="tags"><li>Agentic AI</li><li>Knowledge graphs</li><li>Workflow automation</li><li>Requirements Engineering</li></ul>
         </article>
 
-        <article class="role reveal">
-          <div class="role__rail">
-            <span class="role__mark"><img src="rise-logo.png" alt="RISE Research Institutes of Sweden logo"></span>
-            <span class="role__date"><i class="fas fa-calendar" aria-hidden="true"></i> Jan 2026 — Jun 2026</span>
-          </div>
-          <div class="role__body">
-            <h3 class="role__title">Master's Thesis Researcher</h3>
-            <p class="role__org">RISE Research Institutes of Sweden, Gothenburg, Sweden</p>
-            <ul class="role__points">
-              <li>Engineered a scalable audio ML pipeline to transform 17 TB of multi-channel guillemot colony recordings into 123K high-confidence acoustic events through automated signal processing and filtering.</li> 
-              <li>Applied deep learning-based audio representations, embedding-based analysis, dimensionality reduction and unsupervised clustering to discover and characterise patterns in complex seabird soundscapes while validating cluster stability across stochasticity, parameter sensitivity and sampling variation.</li>
-            </ul>
-            <ul class="tags"><li>Data-centric AI</li><li>Audio Embeddings</li><li>Unsupervised clustering</li><li>Bioacoustics</li></ul>
-            <figure class="role__photo">
-              <img src="guillemot.jpg" alt="Common guillemot on a colony cliff, the seabird species studied in this thesis" loading="lazy" decoding="async">
-              <figcaption>Common guillemot — the study species</figcaption>
-            </figure>
-          </div>
-        </article>
+       
+
+       
 
         <article class="role reveal">
           <div class="role__rail">
@@ -322,6 +350,7 @@
           <ul class="tags">
             <li>LLaMA 3.1</li><li>QLoRA</li><li>RAG</li><li>Vector search</li>
           </ul>
+          <a class="btn btn--solid magnetic" href="eagleeye.html" data-cursor="explore" style="margin:1.4rem 1.4rem 1.2rem 0"><span>Explore the work</span><span aria-hidden="true">→</span></a>
           <a class="linkout magnetic" data-cursor="repo" href="https://github.com/vineethdhagey/Eagleeye" target="_blank" rel="noopener noreferrer">
             View repository
             <svg aria-hidden="true"><use href="#i-arrow-ne"/></svg>

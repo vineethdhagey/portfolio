@@ -508,3 +508,72 @@
 
   onScroll();
 })();
+
+/* ---------- Volvo interactive workflow ---------- */
+(function () {
+  const root = document.getElementById('volvoRole');
+  const svg = document.getElementById('vxGraph');
+  if (!root || !svg) return;
+  const NS = 'http://www.w3.org/2000/svg';
+  const desc = document.getElementById('vxDesc');
+  const steps = Array.from(root.querySelectorAll('.vx__step'));
+  const copy = [
+    'Technical requirements for electromobility software arrive as dense, natural-language specifications that must be analysed one by one.',
+    'Requirements are structured into a knowledge graph, so retrieval is grounded in how they relate to each other, not only in keyword matches.',
+    'Specialised agents analyse each requirement, retrieve related context from the graph and cooperate to draft the validation steps.',
+    'Structured test cases come out the other end, deployed to production: less manual effort and wider test coverage.'
+  ];
+  const cols = [
+    { x: 48,  y: [62, 155, 248], l: 'REQUIREMENTS' },
+    { x: 150, y: [40, 115, 195, 270], l: 'KNOWLEDGE GRAPH' },
+    { x: 268, y: [70, 155, 240], l: 'AGENTS' },
+    { x: 372, y: [62, 155, 248], l: 'TEST CASES' }
+  ];
+  const links = [
+    [[0,0],[1,0]], [[0,0],[1,1]], [[0,1],[1,1]], [[0,1],[1,2]], [[0,2],[1,2]], [[0,2],[1,3]],
+    [[1,0],[2,0]], [[1,1],[2,0]], [[1,1],[2,1]], [[1,2],[2,1]], [[1,2],[2,2]], [[1,3],[2,2]],
+    [[2,0],[3,0]], [[2,0],[3,1]], [[2,1],[3,1]], [[2,1],[3,2]], [[2,2],[3,2]]
+  ];
+  const el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+  const pt = (c, i) => [cols[c].x, cols[c].y[i]];
+  const edges = links.map(([a, b]) => {
+    const [x1, y1] = pt(...a), [x2, y2] = pt(...b), mx = (x1 + x2) / 2;
+    const p = el('path', { class: 'vx__edge', d: `M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}` });
+    p.dataset.step = b[0]; svg.appendChild(p); return p;
+  });
+  const nodes = [], labs = [];
+  cols.forEach((c, ci) => {
+    c.y.forEach((y, i) => {
+      const n = ci === 0 || ci === 3
+        ? el('rect', { class: 'vx__node', x: c.x - 11, y: y - 11, width: 22, height: 22, rx: ci === 0 ? 4 : 11 })
+        : el('circle', { class: 'vx__node', cx: c.x, cy: y, r: ci === 1 ? 9 : 12 });
+      n.dataset.step = ci; n.addEventListener('click', () => go(ci, true));
+      svg.appendChild(n); nodes.push(n);
+    });
+    const t = el('text', { class: 'vx__lab', x: c.x, y: 302 }); t.textContent = c.l;
+    t.dataset.step = ci; svg.appendChild(t); labs.push(t);
+  });
+
+  let cur = 0, timer = null, touched = false, still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(i, user) {
+    cur = i;
+    steps.forEach((s, k) => { s.classList.toggle('is-on', k === i); s.setAttribute('aria-selected', k === i); });
+    nodes.forEach(n => n.classList.toggle('is-on', +n.dataset.step === i));
+    labs.forEach(t => t.classList.toggle('is-on', +t.dataset.step === i));
+    edges.forEach(p => p.classList.toggle('is-on', +p.dataset.step === i));
+    desc.textContent = copy[i];
+    if (user) { touched = true; stop(); }
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  function play() { if (still || timer || touched) return; timer = setInterval(() => go((cur + 1) % 4), 3400); }
+  steps.forEach((s, k) => { s.addEventListener('click', () => go(k, true)); s.addEventListener('mouseenter', () => go(k, true)); });
+  root.addEventListener('pointermove', (e) => {
+    const r = root.getBoundingClientRect();
+    root.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    root.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+  go(0);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((en) => en.forEach(x => x.isIntersecting ? play() : stop()), { threshold: 0.35 }).observe(root);
+  } else play();
+})();

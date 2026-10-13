@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Master's Thesis — Bioacoustic Discovery of Guillemot Vocalisations · Vineeth Dhagey</title>
+  <meta name="description" content="Master's thesis at RISE and BTH: a data-centric AI pipeline that reduces 14 TB of multi-channel seabird recordings to 123,412 near-field acoustic events, comparing BirdNET, BirdAVES and OpenL3 embeddings for unsupervised discovery and robust cluster characterisation.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06070A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="case.css">
+</head>
+
+<body>
+<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__label"></span></div></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="ambient" aria-hidden="true"><i></i></div>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="bar__logo" href="index.html"><span class="bar__mark" aria-hidden="true"><svg viewBox="0 0 64 64" width="22" height="22"><path d="M14 20 L32 47 L50 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/></svg></span><span>Vineeth Dhagey</span></a>
+
+  <nav class="bar__nav" aria-label="Page sections">
+    <a href="#overview">Overview</a>
+    <a href="#problem">Problem</a>
+    <a href="#approach">Approach</a>
+    <a href="#results">Results</a>
+  </nav>
+
+  <a class="btn btn--ghost btn--sm" href="index.html">
+    <span aria-hidden="true">←</span>
+    <span>Home</span>
+  </a>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="overview">
+    <div class="wrap">
+
+      <p class="crumb">
+        <a href="index.html">Home</a> /
+        <a href="index.html#experience">Experience</a> /
+        Master's thesis
+      </p>
+
+      <div class="hero__grid">
+        <div>
+          <span class="chip">
+            <i></i>
+            Master's thesis · RISE · BTH · 2026
+          </span>
+
+          <h1>
+            <span class="ln" style="--i:0"><span>Listening to a</span></span>
+            <span class="ln" style="--i:1"><span><em>seabird colony,</em></span></span>
+            <span class="ln" style="--i:2"><span>at scale.</span></span>
+          </h1>
+
+          <p class="lead">
+            How can recurring vocal patterns be discovered in terabytes of noisy seabird audio without labelled calls? This thesis develops a data-centric AI pipeline that processes 14 TB of multi-channel recordings into 123,412 near-field acoustic events, comparing deep audio embeddings and unsupervised clustering to uncover persistent patterns in common guillemot vocalisations.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn--solid"
+               href="mailto:dhageyvineeth@gmail.com?subject=Thesis%20research">
+              <span>Discuss the research</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="btn btn--ghost" href="#approach">
+              <span>Explore the pipeline</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="vis tilt">
+          <div class="tilt__in">
+            <div class="frame">
+              <img
+                src="bird.jpg"
+                alt="Common guillemots on a breeding cliff, the study species"
+                style="aspect-ratio:4/5">
+            </div>
+          </div>
+
+          <span class="float" style="left:-1rem;bottom:2.5rem">
+            14 TB raw archive
+          </span>
+
+          <span class="float" style="right:-.5rem;top:2rem;animation-delay:-2s">
+            123412 events
+          </span>
+        </div>
+      </div>
+
+      <dl class="meta">
+        <div>
+          <dt>Context</dt>
+          <dd>Master's thesis · 2026</dd>
+        </div>
+        <div>
+          <dt>Research</dt>
+          <dd>Unsupervised acoustic discovery</dd>
+        </div>
+        <div>
+          <dt>Industry</dt>
+          <dd style="display:flex;align-items:center;gap:.6rem"><img src="rise-logo.png" alt="RISE logo" width="36" height="36" style="width:36px;height:36px;border-radius:5px;flex:none;object-fit:cover"><span>RISE Research Institutes of Sweden, Gothenburg</span></dd>
+        </div>
+      </dl>
+
+    </div>
+  </section>
+
+  <!-- KEY NUMBERS -->
+  <section aria-label="Project statistics">
+    <div class="wrap">
+      <div class="stats">
+
+        <div class="stat reveal">
+          <b data-count="14" data-suffix=" TB">14 TB</b>
+          <span>Continuous, eight-channel colony audio screened</span>
+        </div>
+
+        <div class="stat reveal">
+          <b data-count="123412">123412</b>
+          <span>Retained near-field events from the TRI7C microphone</span>
+        </div>
+
+        <div class="stat reveal">
+          <b data-count="26">26</b>
+          <span>Core Robust acoustic macro-clusters identified</span>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FIELD CONTEXT -->
+  <section>
+    <div class="wrap">
+      <p class="label reveal">From colony to signal</p>
+
+      <h2 class="reveal">A complex soundscape. No predefined vocabulary.</h2>
+
+      <p class="sub reveal">
+        Common guillemots breed in densely populated cliff colonies where
+        overlapping calls coexist with wind, waves and background colony
+        activity. The challenge is not simply detecting sound, but finding
+        repeatable acoustic patterns without assuming the call categories
+        in advance.
+      </p>
+
+      <div class="pair reveal">
+        <figure>
+          <img
+            src="colony.jpeg"
+            alt="Common guillemots gathered on a breeding cliff"
+            loading="lazy">
+          <figcaption>
+            The colony — common guillemots at the Stora Karlsö AukLab site
+          </figcaption>
+        </figure>
+
+        <span class="pair__arrow" aria-hidden="true">→</span>
+
+        <figure class="scan">
+          <img
+            src="spectogram.png"
+            alt="Illustrative spectrogram showing sound energy across time and frequency"
+            loading="lazy">
+          <figcaption>
+            The signal — a spectrogram reveals acoustic structure over time
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap">
+      <p class="label reveal">01 · The problem</p>
+
+      <h2 class="reveal">Turning terabytes into something researchers can interpret.</h2>
+
+      <div class="grid3">
+
+        <article class="card reveal">
+          <span class="ico">
+            <i class="fas fa-database" aria-hidden="true"></i>
+          </span>
+          <h3>Scale without labels</h3>
+          <p>
+            The 14 TB archive contains continuous, synchronised recordings
+            across eight microphone channels. Reviewing the full soundscape
+            manually is impractical, and no labelled call catalogue exists
+            for the study colony.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico">
+            <i class="fas fa-wave-square" aria-hidden="true"></i>
+          </span>
+          <h3>Overlapping acoustic activity</h3>
+          <p>
+            Nearby birds, distant vocalisations, wind and waves produce a
+            complex soundscape. Spatial-proximity detection helps isolate
+            near-field activity, but its event boundaries do not necessarily
+            correspond to individual biological calls.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico">
+            <i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i>
+          </span>
+          <h3>Clusters are not ground truth</h3>
+          <p>
+            Unsupervised algorithms can produce many clusters without
+            establishing their biological meaning. Representation choice,
+            parameter sensitivity, stochasticity and expert review all matter
+            when deciding which patterns deserve further investigation.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="wrap">
+      <p class="label reveal">02 · The approach</p>
+
+      <h2 class="reveal">A data-centric pipeline from raw audio to reviewed patterns.</h2>
+
+      <p class="sub reveal">
+        The contribution is an integrated workflow rather than a newly
+        invented neural network. Recording selection, event detection,
+        representation choice, clustering, persistence analysis and expert
+        interpretation are treated as connected stages.
+      </p>
+
+      <div class="pipe">
+
+        <div class="card step reveal" data-n="1">
+          <h3>Screen the soundscape</h3>
+          <p>
+            Compute acoustic features and quality indicators across the
+            archive to identify recording periods suitable for detailed
+            near-field event detection.
+          </p>
+        </div>
+
+        <div class="card step reveal" data-n="2">
+          <h3>Detect and retain events</h3>
+          <p>
+            Apply spatial-proximity detection across the microphone array.
+            Select the TRI7C channel and retain events at least 0.2 seconds
+            long, yielding 123,412 events and 11.83 hours of audio.
+          </p>
+        </div>
+
+        <div class="card step reveal" data-n="3">
+          <h3>Extract audio embeddings</h3>
+          <p>
+            Represent each event using BirdNET, BirdAVES and OpenL3.
+            The resulting 1,024-, 768- and 512-dimensional vectors capture
+            different learned views of the same acoustic events.
+          </p>
+        </div>
+
+        <div class="card step reveal" data-n="4">
+          <h3>Reduce dimensions and cluster</h3>
+          <p>
+            Reduce the embeddings to 10 dimensions using UMAP, then apply
+            HDBSCAN to identify dense acoustic groups while leaving
+            insufficiently supported events unassigned.
+          </p>
+        </div>
+
+        <div class="card step reveal" data-n="5">
+          <h3>Test cluster persistence</h3>
+          <p>
+            Track clusters across random seeds and a 5 × 5 parameter grid.
+            Separate Core Robust macro-clusters from Micro-Variants and
+            Fragile clusters using predefined operational criteria.
+          </p>
+        </div>
+
+        <div class="card step reveal" data-n="6">
+          <h3>Characterise and review</h3>
+          <p>
+            Inspect audio, spectrograms and descriptive acoustic features.
+            Compare persistent clusters with published guillemot and alcid
+            vocalisations, then refine the interpretations through domain
+            expert review.
+          </p>
+        </div>
+
+      </div>
+
+      <ul class="tags reveal">
+        <li>Python</li>
+        <li>Audio signal processing</li>
+        <li>BirdNET</li>
+        <li>BirdAVES</li>
+        <li>OpenL3</li>
+        <li>UMAP</li>
+        <li>HDBSCAN</li>
+        <li>DBCV</li>
+        <li>Unsupervised learning</li>
+        <li>Robustness analysis</li>
+        <li>Bioacoustics</li>
+      </ul>
+    </div>
+  </section>
+
+
+<!-- REPRESENTATION COMPARISON -->
+<section id="representations">
+  <div class="wrap">
+    <p class="label reveal">03 · Representation learning</p>
+
+    <h2 class="reveal">Three embeddings. Three different views of sound.</h2>
+
+    <p class="sub reveal">
+      The same 123,412 retained events were analysed using all three
+      representations. Their embedding dimensions and learned objectives
+      differ, allowing a dataset-level comparison of clustering behaviour.
+    </p>
+
+    <div class="grid3 representation-grid">
+
+      <!-- BIRDNET -->
+      <article class="card reveal representation-card">
+
+        <div class="representation-heading">
+          <span class="representation-icon" aria-hidden="true">
+            <i class="fas fa-feather-pointed"></i>
+          </span>
+
+          <div class="representation-title">
+            <h3>BirdNET v2.4</h3>
+            <span class="representation-type">Supervised · Bird-specific</span>
+          </div>
+        </div>
+
+        <div class="embedding-badge">
+          <i class="fas fa-vector-square" aria-hidden="true"></i>
+          <span>1,024 dimensions</span>
+        </div>
+
+        <p>
+          A bird-specific, supervised representation trained for species
+          classification. The global-average-pooling layer produces
+          embeddings instead of species-classification logits.
+        </p>
+
+        <div class="representation-divider"></div>
+
+        <p class="metric-label">Baseline performance</p>
+
+        <div class="metric-pills">
+          <span class="metric-pill">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            119 clusters
+          </span>
+
+          <span class="metric-pill">
+            <i class="fas fa-filter" aria-hidden="true"></i>
+            75.6% noise
+          </span>
+
+          <span class="metric-pill metric-pill--highlight">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            0.069 DBCV
+          </span>
+        </div>
+
+      </article>
+
+      <!-- BIRDAVES -->
+      <article class="card reveal representation-card">
+
+        <div class="representation-heading">
+          <span class="representation-icon" aria-hidden="true">
+            <i class="fas fa-dove"></i>
+          </span>
+
+          <div class="representation-title">
+            <h3>BirdAVES</h3>
+            <span class="representation-type">Self-supervised · Bird-focused</span>
+          </div>
+        </div>
+
+        <div class="embedding-badge">
+          <i class="fas fa-vector-square" aria-hidden="true"></i>
+          <span>768 dimensions</span>
+        </div>
+
+        <p>
+          A bird-focused representation based on self-supervised learning
+          of animal vocalisations. It achieved the strongest density-based
+          clustering result under the tested baseline configuration.
+        </p>
+
+        <div class="representation-divider"></div>
+
+        <p class="metric-label">Baseline performance</p>
+
+        <div class="metric-pills">
+          <span class="metric-pill">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            125 clusters
+          </span>
+
+          <span class="metric-pill">
+            <i class="fas fa-filter" aria-hidden="true"></i>
+            72.3% noise
+          </span>
+
+          <span class="metric-pill metric-pill--highlight">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            0.131 DBCV
+          </span>
+        </div>
+
+      </article>
+
+      <!-- OPENL3 -->
+      <article class="card reveal representation-card">
+
+        <div class="representation-heading">
+          <span class="representation-icon" aria-hidden="true">
+            <i class="fas fa-wave-square"></i>
+          </span>
+
+          <div class="representation-title">
+            <h3>OpenL3</h3>
+            <span class="representation-type">Self-supervised · General audio</span>
+          </div>
+        </div>
+
+        <div class="embedding-badge">
+          <i class="fas fa-vector-square" aria-hidden="true"></i>
+          <span>512 dimensions</span>
+        </div>
+
+        <p>
+          A general-purpose audio representation learned through
+          audio-visual correspondence. It provides a useful contrast
+          to the two bird-focused representations.
+        </p>
+
+        <div class="representation-divider"></div>
+
+        <p class="metric-label">Baseline performance</p>
+
+        <div class="metric-pills">
+          <span class="metric-pill">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            141 clusters
+          </span>
+
+          <span class="metric-pill">
+            <i class="fas fa-filter" aria-hidden="true"></i>
+            72.8% noise
+          </span>
+
+          <span class="metric-pill metric-pill--highlight">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            0.108 DBCV
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+
+   
+  </div>
+</section>
+
+  <!-- RESULTS -->
+  <section id="results">
+    <div class="wrap">
+      <p class="label reveal">04 · Results</p>
+
+      <h2 class="reveal">From 125 baseline clusters to 26 persistent macro-clusters.</h2>
+
+      <p class="sub reveal">
+        The final analysis asks three distinct questions: which representation
+        exposes useful structure, which clusters remain stable under
+        perturbation, and what those persistent clusters might represent
+        biologically.
+      </p>
+
+      <div class="grid2">
+
+        <article class="card reveal">
+          <span class="num">RQ1 · Representation and dimensionality</span>
+          <h3>UMAP changed the clustering outcome substantially</h3>
+          
+        </article>
+
+        <article class="card reveal">
+          <span class="num">RQ2 · Persistence and robustness</span>
+          <h3>Testing which clusters survive perturbation</h3>
+         
+        </article>
+
+        <article class="card reveal">
+          <span class="num">RQ3 · Acoustic characterisation</span>
+          <h3>Persistent structure, interpreted cautiously</h3>
+         
+        </article>
+
+        <article class="card reveal">
+          <span class="num">Outcome · Data-centric AI</span>
+          <h3>A reproducible route to acoustic discovery</h3>
+          
+          <p>
+            The outcome is a set of candidate acoustic categories, not a
+            complete or independently confirmed guillemot vocal repertoire.
+          </p>
+          <p style="margin-top:1rem">
+            <a class="btn btn--ghost btn--sm"
+               href="mailto:dhageyvineeth@gmail.com?subject=Thesis%20research">
+              <span>Discuss the findings</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE WORK ESTABLISHES -->
+  <section>
+    <div class="wrap">
+      <p class="label reveal">05 · Interpretation</p>
+
+      <h2 class="reveal">What the results establish — and what they do not.</h2>
+
+      <div class="grid2">
+
+        <article class="card reveal">
+          <span class="ico">
+            <i class="fas fa-check" aria-hidden="true"></i>
+          </span>
+          <h3>What the evidence supports</h3>
+          <p>
+          The pipeline reveals recurring acoustic patterns in noisy colony recordings. Representation choice and dimensionality reduction strongly influence clustering, while robustness tests identify persistent patterns that expert review links to documented vocalisations.
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="ico">
+            <i class="fas fa-scale-balanced" aria-hidden="true"></i>
+          </span>
+          <h3>What remains uncertain</h3>
+          <p>
+            Biological classification accuracy could not be verified without ground-truth labels. The analysis covered one microphone channel and one breeding season, relied on one expert's review, and detected acoustic segments rather than confirmed individual calls.
+          </p>
+        </article>
+
+      </div>
+
+     
+    </div>
+  </section>
+
+  <!-- REPRODUCIBILITY -->
+  <section>
+    <div class="wrap">
+      <p class="label reveal">06 · Reproducibility</p>
+
+      <h2 class="reveal">Built to be inspected and reproduced.</h2>
+
+      <div class="grid2">
+
+        <article class="card reveal">
+          <span class="num">Code and selected outputs</span>
+          <h3>Research repository</h3>
+          <p>
+            The thesis provides a repository containing preprocessing
+            material, the RQ1-RQ3 analysis code, the retained TRI7C event
+            catalogue and selected results.
+          </p>
+          <p style="margin-top:1rem">
+            <a class="btn btn--solid btn--sm" data-cursor="repo"
+               href="https://github.com/ridr-se/2026-datacentric-sound"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span>View research repository</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        </article>
+
+        <article class="card reveal">
+          <span class="num">Data access</span>
+          <h3>Responsible sharing</h3>
+          <p>
+            The AukLab archive is jointly held by RISE Sweden and the
+            Swedish University of Agricultural Sciences (SLU).
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vineeth Dhagey</span>
+
+    <span>
+      <a href="index.html">Home</a> ·
+      <a href="mailto:dhageyvineeth@gmail.com">Email</a> ·
+      <a href="https://www.linkedin.com/in/vineeth-dhagey-0336b4226/"
+         target="_blank"
+         rel="noopener noreferrer">LinkedIn</a> ·
+      <a href="https://github.com/vineethdhagey"
+         target="_blank"
+         rel="noopener noreferrer">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><i aria-hidden="true"></i></button>
+
+<script src="case.js" defer></script>
+</body>
+</html>
