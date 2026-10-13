@@ -577,3 +577,64 @@
     new IntersectionObserver((en) => en.forEach(x => x.isIntersecting ? play() : stop()), { threshold: 0.35 }).observe(root);
   } else play();
 })();
+
+/* ---------- skills filter/search, spotlight, contact extras ---------- */
+(() => {
+  const $ = (s, r = document) => [...r.querySelectorAll(s)];
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sets = $('.skillset'), skillsEl = $('.skills')[0];
+  sets.forEach((set) => {
+    const lis = $('.pills li', set);
+    lis.forEach((li, i) => li.style.setProperty('--k', i));
+  });
+  const chips = $('.sk-chip'), q = document.getElementById('skQ'), n = document.getElementById('skN');
+  let cat = 'all';
+  const apply = () => {
+    const term = (q ? q.value : '').trim().toLowerCase(); let hits = 0;
+    sets.forEach((set, i) => {
+      const gone = cat !== 'all' && String(i) !== cat; set.classList.toggle('is-gone', gone);
+      let local = 0;
+      $('.pills li', set).forEach((li) => {
+        const m = term && li.textContent.toLowerCase().includes(term);
+        li.classList.toggle('is-hit', !!m); li.classList.toggle('is-dim', !!term && !m);
+        if (m) local++;
+      });
+      set.classList.toggle('is-off', !!term && !local && !gone); if (!gone) hits += local;
+    });
+    if (skillsEl) skillsEl.classList.toggle('is-filtered', cat !== 'all');
+    if (n) n.textContent = term ? hits + (hits === 1 ? ' match' : ' matches') : '';
+  };
+  chips.forEach((b) => b.addEventListener('click', () => {
+    cat = b.dataset.f; chips.forEach((x) => { const on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); }); apply();
+  }));
+  if (q) q.addEventListener('input', apply);
+  if (matchMedia('(pointer: fine)').matches) {
+    $('.skillset, .edu__item, .avail, .contact__inner').forEach((el) => el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect(); el.style.setProperty('--mx', e.clientX - r.left + 'px'); el.style.setProperty('--my', e.clientY - r.top + 'px');
+    }, { passive: true }));
+    const ct = document.getElementById('contact');
+    if (ct) ct.addEventListener('pointermove', (e) => { const r = ct.getBoundingClientRect(); ct.style.setProperty('--cx', e.clientX - r.left + 'px'); ct.style.setProperty('--cy', e.clientY - r.top + 'px'); }, { passive: true });
+  }
+  // rotating words
+  const rot = document.getElementById('rot');
+  if (rot && !still) {
+    const w = ['intelligent systems', 'audio AI', 'data pipelines', 'agentic workflows', 'research that ships']; let i = 0;
+    setInterval(() => { rot.classList.add('out'); setTimeout(() => { i = (i + 1) % w.length; rot.textContent = w[i]; rot.classList.remove('out'); }, 320); }, 2400);
+  }
+  // live Stockholm clock
+  const clock = document.getElementById('seTime');
+  if (clock) {
+    const f = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Stockholm' });
+    const t = () => { clock.textContent = f.format(new Date()); }; t(); setInterval(t, 15000);
+  }
+  // copy to clipboard + toast
+  const toast = document.createElement('div'); toast.className = 'toast'; toast.setAttribute('role', 'status'); document.body.appendChild(toast);
+  let tm; const say = (m) => { toast.textContent = m; toast.classList.add('show'); clearTimeout(tm); tm = setTimeout(() => toast.classList.remove('show'), 1800); };
+  const copy = async (txt, label, btn) => {
+    try { await navigator.clipboard.writeText(txt); } catch (e) { const a = document.createElement('textarea'); a.value = txt; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); } catch (_) {} a.remove(); }
+    say(label + ' copied'); if (btn) { btn.classList.add('is-done'); setTimeout(() => btn.classList.remove('is-done'), 1500); }
+  };
+  $('[data-copy]').forEach((b) => b.addEventListener('click', () => copy(b.dataset.copy, 'Email', b)));
+  $('.cbtn--static').forEach((b) => { b.title = 'Click to copy'; b.tabIndex = 0; b.setAttribute('role', 'button');
+    const go = () => copy('+46769511460', 'Phone number', null); b.addEventListener('click', go); b.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }); });
+})();
